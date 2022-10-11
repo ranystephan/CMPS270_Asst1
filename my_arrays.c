@@ -1,6 +1,10 @@
+// Github: ranystephan/CMPS270_Asst1
+
 #include <stdio.h>
 #define SIZE 10 // Symbolic constant with value 10 to be used to refer to the size of the array when needed
 
+
+// Prototyping
 void printArray(int[]); // Takes 1D array and prints it as Index\tValue
 void arrayHistogram(int[]); //Takes an array anc computes its histogram
 void swapValues(int[], int, int); // Takes an array and two indices, then swaps the values at these indices

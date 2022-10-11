@@ -1,5 +1,8 @@
+// Github: ranystephan/CMPS270_Asst1
+
 #include <stdio.h>
 
+// Prototyping
 int hammingDistance(int, int);
 
 
