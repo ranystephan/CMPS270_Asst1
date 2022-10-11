@@ -1,6 +1,13 @@
 #include <stdio.h>
+#define SIZE 10 // Symbolic constant with value 10 to be used to refer to the size of the array when needed
 
-#define SIZE 10
+void printArray(int[]); // Takes 1D array and prints it as Index\tValue
+void arrayHistogram(int[]); //Takes an array anc computes its histogram
+void swapValues(int[], int, int); // Takes an array and two indices, then swaps the values at these indices
+void bubbleSort(int[]); // Sorts taken array using bubble sort algorithm
+float median(int[]); // Calculates the median of an array
+int mode(int[]); // Returns the mode of an array (most existing value)
+int isSorted(int[], int); // Takes 1D array of integers, and its size, and returns 1 if the array is sorted in ascending order and 0 otherwise
 
 void printArray(int arr[])
 {
@@ -37,7 +44,9 @@ void arrayHistogram(int arr[])
 
 void swapValues(int arr[], int first, int second) 
 {
-  int temp = arr[first];
+  int temp = arr[first]; // Stores first index value in a temp to input it in the second index later
+
+  // Swapping the two values
   arr[first] = arr[second];
   arr[second] = temp;
 }
@@ -62,23 +71,31 @@ void bubbleSort(int arr[])
 float median(int arr[])
 {
   if(SIZE%2==0)
-      return (arr[SIZE/2-1] + arr[SIZE/2])/2;
+  {
+    return (arr[SIZE/2-1] + arr[SIZE/2])/2; // Average of the two middle values in case Size is even
+  }
   else 
-      return arr[(SIZE-1)/2];
+  {
+    return arr[(SIZE-1)/2]; // Good to have else case in case of change of SIZE to odd value
+  }
 }
 
-int mode(int arr[]) 
+
+
+int mode(int arr[]) // Similar to arrayHitogram function
 {
-  int freq[3] = {0};
+  int frequency[3] = {0};
+
   for(int i=0; i<SIZE; i++) 
-    {
-      freq[arr[i]-1]++;
-    }
+  {
+    frequency[arr[i]-1]++;
+  }
     
   int mx = 0;
+
   for(int i=0; i<3; i++)
     {
-      mx = (mx > freq[i])? mx:freq[i];
+      mx = (mx > frequency[i])? mx:frequency[i];
     }
     
   return mx;
@@ -98,29 +115,29 @@ int isSorted(int arr[], int n)
 
 int main()
 {
-  int arr[SIZE] = {2,3,1,3,1,2,1,1,3,2};
+  int test_array[SIZE] = {1, 1, 1, 1, 1, 2, 2, 2, 3, 3}; // Same array as example in instruction
     
-  printArray(arr);
+  printArray(test_array);
+  arrayHistogram(test_array);
     
-  arrayHistogram(arr);
+  printf("Here is the array before the swap: %d\t%d\n", test_array[4], test_array[7]);
+  swapValues(test_array, 2, 5);
+  printf("Here is the array after the swap: %d\t%d\n", test_array[4], test_array[7]); // Same indices different values shows effective swap
+  printf("As you can see, the values are the same and so the swap was effective!");
     
-  printf("before swap \n%d %d\n", arr[2], arr[5]);
-  swapValues(arr, 2, 5);
-  printf("after swap \n%d %d\n", arr[2], arr[5]);
+  bubbleSort(test_array);
     
-  bubbleSort(arr);
+  float med = median(test_array);
+  printf("The median of the test_array is:  %.2f\n", med);
     
-  float MEDIAN = median(arr);
-  printf("median of array - %.2f\n", MEDIAN);
+  int mod = mode(test_array);
+  printf("The mode of the test_array is:  %d\n", mod);
     
-  int MODE = mode(arr);
-  printf("mode of the array - %d\n", MODE);
-    
-  int sorted = isSorted(arr, SIZE);
-  if(sorted)
-    printf("array is sorted\n");
+  int issorted = isSorted(test_array, SIZE);
+  if(issorted)
+    printf("test_array is sorted\n");
   else
-    printf("array is not sorted\n");
+    printf("test_array is not sorted\n");
     
   return 0;
 }

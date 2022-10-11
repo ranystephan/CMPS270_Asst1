@@ -8,7 +8,8 @@ int main()
   int number1;
   int number2;
 
-  do{
+  do
+  {
     printf("Please input a pair of two integers: ");
     scanf("%d", &number1);
     if(number1 < 0){break;};
