@@ -13,6 +13,11 @@ float median(int[]); // Calculates the median of an array
 int mode(int[]); // Returns the mode of an array (most existing value)
 int isSorted(int[], int); // Takes 1D array of integers, and its size, and returns 1 if the array is sorted in ascending order and 0 otherwise
 
+
+// Function to print the array
+// Requires: 1D array of integers
+// Returns: nothing
+// Testing Strategy: input an array and compare the output to the expected output
 void printArray(int arr[])
 {
   printf("Index\tValue\n");
@@ -22,6 +27,11 @@ void printArray(int arr[])
     }
 }
 
+
+// Function to compute the histogram of an array
+// Requires: 1D array of integers
+// Returns: nothing
+// Testing Strategy: input an array and compare the output to the expected output
 void arrayHistogram(int arr[])
 {
   int frequency[3] = {0};
@@ -46,6 +56,11 @@ void arrayHistogram(int arr[])
     }
 }
 
+
+// Function to swap the values of two indices in an array
+// Requires: 1D array of integers, two indices
+// Returns: nothing
+// Testing Strategy: input an array and two indices and compare the output to the expected output
 void swapValues(int arr[], int first, int second) 
 {
   int temp = arr[first]; // Stores first index value in a temp to input it in the second index later
@@ -56,7 +71,10 @@ void swapValues(int arr[], int first, int second)
 }
 
 
-
+// Function to sort an array using bubble sort algorithm
+// Requires: 1D array of integers
+// Returns: nothing
+// Testing Strategy: input an array and compare the output to the expected output
 void bubbleSort(int arr[])
 {
   for(int i=0; i<SIZE-1; i++) 
@@ -71,7 +89,10 @@ void bubbleSort(int arr[])
     }
 }
 
-
+// Function to calculate the median of an array
+// Requires: 1D array of integers
+// Returns: the median of the array
+// Testing Strategy: input an array and compare the output to the expected output
 float median(int arr[])
 {
   if(SIZE%2==0)
@@ -85,7 +106,10 @@ float median(int arr[])
 }
 
 
-
+// Function to calculate the mode of an array
+// Requires: 1D array of integers
+// Returns: the mode of the array
+// Testing Strategy: input an array and compare the output to the expected output
 int mode(int arr[]) // Similar to arrayHitogram function
 {
   int frequency[3] = {0};
@@ -105,6 +129,11 @@ int mode(int arr[]) // Similar to arrayHitogram function
   return mx;
 }
 
+
+// Function to check if an array is sorted in ascending order
+// Requires: 1D array of integers, its size
+// Returns: 1 if the array is sorted in ascending order and 0 otherwise
+// Testing Strategy: input an array and compare the output to the expected output
 int isSorted(int arr[], int n)
 {
   int ans = 1;

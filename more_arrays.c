@@ -8,7 +8,9 @@
 char** merge(char *arr1[], int size1, char *arr2[], int size2);
 char** concat(char *arr1[], int size1, char *arr2[], int size2); //takes 2D array of strings as input and returns a 1D array containing the concatenation of elements in each element of the 2D array with space seperation
 
-
+// Requires: two arrays of strings and their sizes
+// Returns: a new array of strings containing the elements of the two arrays
+// Testing Strategy: input two arrays of strings and compare the output to the expected output
 char** merge(char *arr1[], int size1, char *arr2[], int size2)
 {
   char **result = (char **)malloc((size1+size2)*sizeof(char *));
@@ -50,6 +52,10 @@ char** merge(char *arr1[], int size1, char *arr2[], int size2)
   return result;
 }
 
+
+// Requires: two arrays of strings and their sizes
+// Returns: a new array of strings containing the concatenation of elements in each element of the 2D array with space seperation
+// Testing Strategy: input two arrays of strings and compare the output to the expected output
 char** concat(char *arr1[], int size1, char *arr2[], int size2)
 {
   char **result = (char **)malloc(2*sizeof(char *));

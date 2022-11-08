@@ -8,7 +8,9 @@
 char** merge(int, int, char**, char**);
 
 
-
+// Requires: two arrays of strings and their sizes
+// Returns: a new array of strings containing the elements of the two arrays
+// Testing Strategy: input two arrays of strings and compare the output to the expected output
 char** merge(int number1, int number2, char** a, char** b){
 
     int i=0, j=0, k=0;
@@ -29,7 +31,7 @@ char** merge(int number1, int number2, char** a, char** b){
 
     while(j<number2)
       strcpy(result[k++], b[j++]);
-    return ans;
+    return result;
 }
 int main(){
     char *a[3] = {"ab", "ac", "zd"}, *b[4] = {"za", "zb", "zzzzc"};

@@ -9,6 +9,7 @@ int toBinary(int);
 int lsb(int);
 int msb(int);
 
+
 int main()
 {
   unsigned int num;
@@ -33,7 +34,10 @@ return 0;
 
 }
 
-
+// Function to convert the given number to binary
+// Requires: a positive non-zero integer
+// Returns: the binary of the given integer
+// Testing Strategy: input a positive non-zero integer and compare the output to the expected output
 int toBinary(int decimal_number)// Decimal to binary conversion
 {
   if (decimal_number == 0)
@@ -43,6 +47,11 @@ int toBinary(int decimal_number)// Decimal to binary conversion
 
 }
 
+
+// Function to find the lsb of the given number
+// Requires: a positive non-zero integer
+// Returns: the lsb of the given integer
+// Testing Strategy: input a positive non-zero integer and compare the output to the expected output
 int lsb(int s)
 {
   char str[50];
@@ -64,7 +73,10 @@ int lsb(int s)
 
 }
 
-
+// Function to find the msb of the given number
+// Requires: a positive non-zero integer
+// Returns: the msb of the given integer
+// Testing Strategy: input a positive non-zero integer and compare the output to the expected output
 int msb(int s)
 {
 

@@ -24,7 +24,10 @@ int main()
   
 }
 
-
+// Function to calculate the hamming distance between two integers
+// Requires: two integers
+// Returns: the hamming distance between the two integers
+// Testing Strategy: input two integers and compare the output to the expected output
 int hammingDistance(int n1, int n2)
 {
   int x = n1 ^ n2;
